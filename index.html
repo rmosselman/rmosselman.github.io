@@ -8,6 +8,8 @@
       headers: {"Content-Type": "application/json" }
     });
     console.info("response.ok: " + response.ok); 
+    console.info("response.status: " + response.status); 
+    
     const json = await response.json();
     console.info("response: " + json); 
     const label = json['data'][0]['confidences'][0]['label'];
