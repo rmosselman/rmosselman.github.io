@@ -2,6 +2,7 @@
 <div id="results"></div>
 <script>
   async function loaded(reader){
+    console.info("reader: " + reader.result); 
     const response = await fetch('https://renemosselman-minimal.hf.space/gradio_api/call/predict/', {
       method: "POST", body: JSON.stringify({"data": [reader.result] }),
       headers: {"Content-Type": "application/json"}
