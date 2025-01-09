@@ -6,11 +6,13 @@
     async function loaded(reader){
       console.info("eventlistener loaded"); 
       console.info("reader: " + reader.result); 
+      console.info(reader); 
       
       const client   = await Client.connect("renemosselman/minimal")
       const app_info = await client.view_api();
       console.log(app_info);
       const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");
+      console.info(response_0); 
       const exampleImage = await response_0.blob();
       const result   = await client.predict("/predict",  { img: exampleImage} )
 
@@ -36,7 +38,7 @@
     photo.addEventListener('input', read);
   </script>
 </head>
-16
+17
 <body>
   <input id="photo" type="file">
   <div id="results"></div>
