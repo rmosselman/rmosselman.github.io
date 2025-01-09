@@ -7,13 +7,14 @@
       console.info("eventlistener loaded"); 
       console.info("reader: " + reader.result); 
       const client = await Client.connect("renemosselman/minimal")
-      const result = await client.predict("/predict",{"data": [reader.result] } )
+      const result = await client.predict("/predict", img=reader.result )
       
       // const response = await fetch('https://renemosselman-minimal.hf.space/gradio_api/call/predict/', {
       //   method: "POST", body: JSON.stringify({"data": [reader.result] }),
       //   headers: {"Content-Type": "application/json" }
       // });
-      console.info("response.ok: " + result.data); 
+      console.info("result.ok: " + result); 
+      console.info("result.data: " + result.data); 
       
       const json = await response.json();
       console.info("response: " + JSON.stringify(json)); 
@@ -30,7 +31,7 @@
     photo.addEventListener('input', read);
   </script>
 </head>
-6
+7
 <body>
   <input id="photo" type="file">
   <div id="results"></div>
