@@ -33,12 +33,12 @@
       console.info("eventlistener input"); 
       const reader = new FileReader();
       reader.addEventListener('load', () => loaded(reader))
-      reader.readAsDataURL(photo.files[0]);
+      reader.readAsArrayBuffer(photo.files[0]);
     }
     photo.addEventListener('input', read);
   </script>
 </head>
-18
+19
 <body>
   <input id="photo" type="file">
   <div id="results"></div>
