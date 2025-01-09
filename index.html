@@ -6,7 +6,7 @@
     async function loaded(reader){
       console.info("eventlistener loaded"); 
       console.info("reader: " + reader.result); 
-      client = Client("renemosselman/minimal")
+      client =new Client("renemosselman/minimal")
       result = client.predict(
           img=reader.results,
           api_name="/predict"
@@ -33,7 +33,7 @@
     photo.addEventListener('input', read);
   </script>
 </head>
-4
+5
 <body>
   <input id="photo" type="file">
   <div id="results"></div>
