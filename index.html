@@ -2,16 +2,6 @@
 <head>
   <script type="module">
     import { Client } from "https://cdn.jsdelivr.net/npm/@gradio/client/dist/index.min.js";
-  </script>
-</head>
-2
-<body>
-  <input id="photo" type="file">
-  <div id="results"></div>
-
-
-  <script>
-    import { Client, handle_file } from "@gradio/client";
 
     async function loaded(reader){
       console.info("eventlistener loaded"); 
@@ -38,6 +28,17 @@
       reader.readAsDataURL(photo.files[0]);
     }
     photo.addEventListener('input', read);
+  </script>
+</head>
+2
+<body>
+  <input id="photo" type="file">
+  <div id="results"></div>
+
+
+  <script>
+    
+   
     
   </script>
     
