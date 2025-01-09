@@ -18,7 +18,7 @@
       //   method: "POST", body: JSON.stringify({"data": [reader.result] }),
       //   headers: {"Content-Type": "application/json" }
       // });
-      console.info("result.ok: " + result); 
+      console.info(result); 
       console.info("result.data: " + result.data); 
       
       const json = await response.json();
@@ -36,7 +36,7 @@
     photo.addEventListener('input', read);
   </script>
 </head>
-15
+16
 <body>
   <input id="photo" type="file">
   <div id="results"></div>
