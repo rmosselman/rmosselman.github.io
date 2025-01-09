@@ -12,6 +12,7 @@
 
   <script>
     async function loaded(reader){
+      console.info("eventlistener loaded"); 
       console.info("reader: " + reader.result); 
       const app    = await Client.connect("renemosselman/minimal");
       const result = await app.predict("/predict", [reader.result]);
@@ -29,6 +30,7 @@
     }
 
     function read() {
+      console.info("eventlistener input"); 
       const reader = new FileReader();
       reader.addEventListener('load', () => loaded(reader))
       reader.readAsDataURL(photo.files[0]);
