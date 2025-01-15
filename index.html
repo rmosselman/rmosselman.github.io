@@ -6,7 +6,8 @@
     async function predictBlob(b){
       const client   = await Client.connect("renemosselman/minimal")
       const app_info = await client.view_api();
-      
+      console.log("predictBlob");
+      console.log(b);
       console.log(app_info);
       
       const result   = await client.predict("/predict",  { img: b} )
@@ -50,7 +51,7 @@
 
   </script>
 </head>
-8<body>
+9<body>
 
   <input id="photo" type="file">
   <input id="photolink" type="text">
