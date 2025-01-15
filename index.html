@@ -23,6 +23,9 @@
       // });
       console.info(result); 
       console.info("result.data: " + result.data); 
+
+      const label1 = result.data[0]['confidences'][0]['label'];
+      console.info("label1: " + label1); 
       
       const json = await response.json();
       console.info("response: " + JSON.stringify(json)); 
@@ -39,7 +42,7 @@
     photo.addEventListener('input', read);
   </script>
 </head>
-2
+3
 <body>
   <input id="photo" type="file">
   <div id="results"></div>
