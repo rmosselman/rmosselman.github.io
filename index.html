@@ -43,6 +43,7 @@
     async function readlink(){
       const response_0 = await fetch(document.getElementById("photolink").textContent);
       const b = await response_0.blob();
+      console.info(b); 
       predictBlob(b)
     }
     
@@ -51,7 +52,7 @@
 
   </script>
 </head>
-11<body>
+12<body>
 
   <input id="photo" type="file">
   <input id="photolink" type="text">
