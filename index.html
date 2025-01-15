@@ -41,7 +41,7 @@
     }
 
     async function readlink(){
-      const response_0 = await fetch(document.getElementById("photolink").value);
+      const response_0 = await fetch("https://proxy.corsfix.com?" + document.getElementById("photolink").value);
       const b = await response_0.blob();
       console.info(document.getElementById("photolink").value); 
       console.info(b); 
