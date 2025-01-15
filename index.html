@@ -43,6 +43,7 @@
     async function readlink(){
       const response_0 = await fetch(document.getElementById("photolink").textContent);
       const b = await response_0.blob();
+      console.info(document.getElementById("photolink").textContent); 
       console.info(b); 
       predictBlob(b)
     }
