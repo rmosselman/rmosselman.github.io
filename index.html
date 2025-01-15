@@ -4,6 +4,11 @@
     import { Client } from "https://cdn.jsdelivr.net/npm/@gradio/client/dist/index.min.js";
 
     async function predictBlob(b){
+      const client   = await Client.connect("renemosselman/minimal")
+      const app_info = await client.view_api();
+      
+      console.log(app_info);
+      
       const result   = await client.predict("/predict",  { img: b} )
 
       console.info(result); 
@@ -21,9 +26,7 @@
       console.info("reader: " + reader.result); 
       console.info(reader); 
       
-      const client   = await Client.connect("renemosselman/minimal")
-      const app_info = await client.view_api();
-      console.log(app_info);
+      
       
       const b = new Blob([reader.result], { type: "image/jpeg" } );
       predictBlob(b)
